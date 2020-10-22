@@ -24,7 +24,7 @@ public class Process {
     }
 
     public boolean start(){
-        System.out.print("Процесс " + number + " начинает выполнение" + '\n');
+        System.out.print("Process " + number + " started" + '\n');
         thread = threadQ.poll();
         while(allTime + thread.getWorkTime() <= time && thread != null){
             allTime += thread.getWorkTime();
@@ -41,12 +41,12 @@ public class Process {
             threadQ.add(thread);
             if (allTime + thread.getWorkTime() > time) {
 
-                System.out.print("Процесс " + number + " приостановлен." + " Времени затрачено: " + allTime + '\n' + '\n');
+                System.out.print("Process " + number + " stopped." + " Time spent: " + allTime + '\n' + '\n');
                 allTime = 0;
                 return true;
             }
         }
-        System.out.print("Процесс " + number + " выполнен" + " Времени затрачено: " + allTime + '\n' + '\n');
+        System.out.print("Process " + number + " done" + " Time spent: " + allTime + '\n' + '\n');
         return false;
     }
 }

@@ -12,16 +12,16 @@ public class MyThread {
     }
 
     public boolean start(){
-        System.out.print("       Поток " + number + " начинает выполнение" + '\n');
+        System.out.print("       Thread " + number + " started" + '\n');
 
         // выполнение...
 
         if(workTime > time){
-            System.out.print("       Поток " + number + " приостановлен" + " Времени затрачено: " + time + '\n');
+            System.out.print("       Thread" + number + " stopped" + " Time spent: " + time + '\n');
             workTime -= time;
             return true;
         }
-        System.out.print("       Поток " + number + " выполнен"  + " Времени затрачено: " + workTime + '\n');
+        System.out.print("       Thread " + number + " done"  + " Time spent: " + workTime + '\n');
         return false;
     }
 
