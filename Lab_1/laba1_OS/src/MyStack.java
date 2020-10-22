@@ -1,60 +1,36 @@
-public class MyStack<T> {
-    private class Node<T>{
-        T data;
-        private Node<T> next;
-        Node(T data){
-            this.data = data;
-        }
+import java.util.List;
 
-        @Override
-        public String toString() {
-            return data.toString();
-        }
-    }
-    private Node<T> root = null;
+public class MyStack {
 
-    public void push(T data){
-        Node<T> cash = null;
-        if(root == null){
-            root = new Node<T>(data);
-            return;
-        }
 
-        cash = root;
-        root = new Node<T>(data);
-        root.next = cash;
+
+
+
+    private final Object[] massive;
+
+    public int size;
+
+
+    public MyStack() {
+        massive = new Object[255];
+        size = 0;
     }
 
-    public T pop(){
-        if(root == null){
-            return null;
-        }
-        Node<T> cash = null;
-        cash = root;
-        root = root.next;
-        return cash.data;
-    }
-
-    public int size(){
-        int count = 0;
-        Node<T> cash = root;
-        while(cash != null){
-            cash = cash.next;
-            count++;
-        }
-
-        return count;
-    }
-    public void print(){
-        while(root != null){
-            System.out.println(root.data);
-            Node<T> cash = null;
-            cash = root;
-            root = root.next;
+    public void push(Object element) {
+        if (size < massive.length) {
+            massive[size] = element;
+            size++;
         }
     }
 
-    public void clear(){
-        root = null;
+
+    public Object pop() {
+        if(size>0) {
+            size--;
+            return massive[size];
+        }
+        return null;
     }
+
+
 }
