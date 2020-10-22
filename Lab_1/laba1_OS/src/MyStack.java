@@ -2,15 +2,8 @@ import java.util.List;
 
 public class MyStack {
 
-
-
-
-
     private final Object[] massive;
-
-    public int size;
-
-
+    private int size;
     public MyStack() {
         massive = new Object[255];
         size = 0;

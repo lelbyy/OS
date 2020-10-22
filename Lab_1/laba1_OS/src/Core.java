@@ -15,13 +15,24 @@ public class Core {
     }
 
     public void performSystemCall(int id) {
+        int size = 0;
+        MyStack mm = new MyStack();
+        Object cash = stack.pop();
 
-        if (stack.size == 0) {
+        while(cash!=null){
+            size++;
+            mm.push(cash);
+            cash = stack.pop();
+        }
+         for(int i = 0 ; i<size; i++){
+             stack.push(mm.pop());
+        }
+        if (size == 0) {
             System.out.println("Стэк пуст");
             return;
         }
 
-        int stackSize = stack.size;
+        int stackSize = size;
         Object[] args = new Object[stackSize];
 
         for (int i = 0; i < stackSize; i++) {
