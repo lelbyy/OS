@@ -4,49 +4,20 @@ import java.util.Random;
 public class Process {
     private int quantityThread;
     private int number;
-    private int time;
-    private int allTime = 0;
-    Process(int number, int time, int quantityThread){
+    Process(int number, int quantityThread){
         this.quantityThread = quantityThread;
         this.number = number;
-        this.time = time;
     }
 
-    private MyThread thread;
-    private Queue<MyThread> threadQ = new LinkedList<>();
 
-    public void createThread() {
-
+    public Queue createThread() {
+        Queue<MyThread> threadQ = new LinkedList<>();
+        MyThread thread;
         for(int i = 0; i < quantityThread; i++){
-            thread = new MyThread(i, 2);
+            thread = new MyThread(i, 2, number);
             threadQ.add(thread);
         }
+        return threadQ;
     }
 
-    public boolean start(){
-        System.out.print("Process " + number + " started" + '\n');
-        thread = threadQ.poll();
-        while(allTime + thread.getWorkTime() <= time && thread != null){
-            allTime += thread.getWorkTime();
-            if(thread.start()){
-                threadQ.add(thread);
-            }
-
-            thread = threadQ.poll();
-            if(thread == null){
-                break;
-            }
-        }
-        if(thread != null) {
-            threadQ.add(thread);
-            if (allTime + thread.getWorkTime() > time) {
-
-                System.out.print("Process " + number + " stopped." + " Time spent: " + allTime + '\n' + '\n');
-                allTime = 0;
-                return true;
-            }
-        }
-        System.out.print("Process " + number + " done" + " Time spent: " + allTime + '\n' + '\n');
-        return false;
-    }
 }

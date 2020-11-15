@@ -8,20 +8,25 @@ public class Core {
     private int maxTime = 20;
     Random random = new Random();
 
+
+    private MyThread thread;
+    private Queue<MyThread> threadQ = new LinkedList<>();
+
     public void planning() {
-        processes = processesQ.poll();
-        while(processes != null){
-            if(processes.start()){
-                processesQ.add(processes);
+        thread = threadQ.poll();
+        while(thread != null){
+            if(thread.start()){
+                threadQ.add(thread);
             }
-            processes = processesQ.poll();
+            thread = threadQ.poll();
         }
     }
+
     public void createProcess(int quantityProcess) {
         for(int i = 0; i < quantityProcess; i++){
             int quantityThread = random.nextInt(10) + 1;
-            processes = new Process(i, maxTime, quantityThread);
-            processes.createThread();
+            processes = new Process(i, quantityThread);
+            threadQ.addAll(processes.createThread());
             processesQ.add(processes);
         }
 
