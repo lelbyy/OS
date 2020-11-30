@@ -1,87 +1,96 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.LinkedList;
 
 public class MemoryDistributor {
-    MemoryDistributor() {
-        physicalMemory = new PageTable(memoryCapacity / pageCapacity);
-        for (int i = 0; i < Main.getRandomNumber(5, 7); i++) {
-            processList.add(new Process(i));
-        }
-    }
-    public void swapping(Process process) {
-        System.out.println("\n" + "Implementation of swapping");
-        Page[] pm = physicalMemory.getPageTable();
-        for (int i = 0; i < process.getVirtualMemory().size(); i++) {
-            Page trashPage = pm[i];
-            if (trashPage != null) {
-                System.out.println("\n" + "Recording on disk" + trashPage.getID() + " process " + trashPage.getProcessID());
-            }
-            pm[i] = process.getVirtualMemory().get(i);
-            System.out.println("Adding page " + pm[i].getID() + " process " + pm[i].getProcessID());
+    private ArrayList<Process> processes = new ArrayList<Process>();
+    private int memoryCapacity = 256;
+    private int pageCapacity = 32;
+    private PageTable physicalMemory = new PageTable(memoryCapacity/pageCapacity);
+    private LinkedList<Page> pagesQueue = new LinkedList<Page>();
+    private int countPageCapacity = 0;
+
+    public MemoryDistributor() {
+        for (int i = 0; i < 5; i++) {
+            processes.add(new Process(i));
         }
     }
 
-    public final PageTable physicalMemory;
-    private static final int memoryCapacity = 256;
-    private static final int pageCapacity = 32;
-    private final ArrayList<Process> processList = new ArrayList<>();
-
-    public void work() {
-        for (int loop = 1; loop < 20; loop++) {
-            for (Process process : processList) {
-                if(loop%2 == 1){
+    public void run() {
+        while (!processes.isEmpty()) {
+            for (Process process : processes) {
+                if (physicalMemory.checkContain(countPageCapacity)) {
                     swapping(process);
+                    countPageCapacity = 0;
                     continue;
                 }
-                int index = Main.getRandomNumber(0, process.getVirtualMemory().size() - 1);
-                Page usefulPage = process.getVirtualMemory().get(index);
-                int actionType = Main.getRandomNumber(0, 1);
-                Page[] pm = physicalMemory.getPageTable();
+                System.out.println("Process : " + process.getID());
+                System.out.println("\tLoad page");
+                Page nowPage = process.getNextPage();
 
-                if (usefulPage.isInPhysicalMemory()) {
-                    if (actionType == 0) {
-                        usefulPage.setR(1);
-                        System.out.println("Page: " + usefulPage.getID() + " Process: " + process.getID() +
-                                " PhysicalMemory: " + usefulPage.getPhysicalPageID() + " \n" + "Appeal");
-                    } else {
-                        usefulPage.setM(1);
-                        System.out.println("Page: " + usefulPage.getID() + " Process: " + process.getID() +
-                                " PhysicalMemory: " + usefulPage.getPhysicalPageID() + " Modification");
+                if (nowPage != null) {
+                    if (physicalMemory.getSize() < physicalMemory.getPagesCount()) {
+                        System.out.println("\tPage : " + nowPage.getPageID() + " adding to RAM");
+                        pagesQueue.add(nowPage);
+                        physicalMemory.addPage(nowPage);
                     }
-                    //если страницы нет, но в физической памяти есть место
-                } else if (pm[physicalMemory.getMaxPages() - 1] == null) {
-                    for (int i = 0; i < physicalMemory.getMaxPages(); i++) {
-                        if (pm[i] == null) {
-                            usefulPage.setInPhysicalMemory(true);
-                            usefulPage.setPhysicalPageID(i);
-                            pm[i] = usefulPage;
-                            System.out.println("Page " + usefulPage.getID() + " Process: " + process.getID() + " Now in the physical memory: " + i);
-                            break;
+                    else {
+                        Page safePage;
+                        while (true) {
+                            safePage = pagesQueue.poll();
+                            safePage.setApp();
+                            if (safePage.inInPhysicalMemory()) {
+                                pagesQueue.add(safePage);
+                            }
+                            else {
+                                pagesQueue.add(nowPage);
+                                System.out.println("\tPage : " + safePage.getPageID() + " from process : " + safePage.getProcessID() + " remove from RAM");
+                                physicalMemory.removePage(safePage);
+                                System.out.println("\tPage : " + nowPage.getPageID() + " adding to RAM");
+                                countPageCapacity++;
+                                physicalMemory.addPage(nowPage);
+                                for (Process safeProcess : processes) {
+                                    if (safePage.getProcessID() == safeProcess.getID()) {
+                                        safeProcess.addPage(safePage);
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
                         }
                     }
-                } else {
-                    System.out.println("\n\n" + "Page break in progress ...");
-                    Arrays.sort(pm);
-                    for (Page page : pm) {
-                        System.out.println("PhysicalMemory: " + page.getPhysicalPageID() + " Process: " + page.getProcessID() + " Page: " + usefulPage.getID() + " Class: " + (page.getR() * 2 + page.getM()));
+                }
+                else {
+                    System.out.println("\tNULL new pages in process : " + process.getID());
+                    physicalMemory.removePage(pagesQueue.poll());
+                    if (!physicalMemory.havePageInProcess(process.getID())) {
+                        System.out.println("\tProcess : " + process.getID() + " removing");
+                        processes.remove(process);
+                        break;
                     }
-                    System.out.println(" " + pm[0].getPhysicalPageID());
-                    usefulPage.setInPhysicalMemory(true);
-                    usefulPage.setR(1);
-                    usefulPage.setPhysicalPageID(pm[0].getPhysicalPageID());
-                    pm[0].setInPhysicalMemory(false);
-                    pm[0] = usefulPage;
-                    System.out.println("Unloading the page " + usefulPage.getID() + " process " + process.getID());
-                    System.out.println("Page break in progress ...");
+
                 }
             }
-            System.out.println("\n\n" + "Lower priority of all pages\n");
-            for (Page page : physicalMemory.getPageTable()) {
-                if (page != null) {
-                    page.setR(0);
-                    page.setM(0);
+        }
+    }
+
+    public void swapping(Process process) {
+        System.out.println("Swapping start");
+        for (int i = 0;i<process.getSize();i++) {
+            Page safePage = pagesQueue.poll();
+            if (safePage != null) {
+                System.out.println("\tSave page " + safePage.getPageID() + " of process : " + safePage.getProcessID());
+                physicalMemory.removePage(safePage);
+                for (Process safeProcess : processes) {
+                    if (safePage.getProcessID() == safeProcess.getID()) {
+                        safeProcess.addPage(safePage);
+                        break;
+                    }
                 }
             }
+            Page nowPage = process.getNextPage();
+            System.out.println("\tAdding a page " + nowPage.getPageID() + " of  process : " + nowPage.getProcessID());
+            pagesQueue.add(nowPage);
+            physicalMemory.addPage(nowPage);
         }
     }
 }

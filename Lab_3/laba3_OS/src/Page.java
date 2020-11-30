@@ -1,64 +1,31 @@
-public class Page implements Comparable<Page> {
-    private final int ID;
-    private boolean isInPhysicalMemory;
-    private int R = 0;
-    private int M = 0;
-    private int physicalPageID;
-    private final int processID;
+import java.util.Random;
 
-    Page(int ID, int processID){
-        this.ID = ID;
-        this.processID = processID;
+public class Page {
+    private int PageID;
+    private int ProcessID;
+    private boolean isInPhysicalMemory = false;
+
+    public Page(int PageID,int ProcessID) {
+        this.PageID = PageID;
+        this.ProcessID = ProcessID;
+        System.out.println("\tPage : " + this.PageID + " created;");
     }
 
-    public int getID() {
-        return ID;
+    public void setApp() {
+        Random random = new Random();
+        this.isInPhysicalMemory = random.nextBoolean();
+        System.out.println("\tPage " + this.PageID + " from process : " + ProcessID + " appeal set to : " + this.isInPhysicalMemory);
     }
 
-    public int getM(){
-        return M;
+    public boolean inInPhysicalMemory() {
+        return this.isInPhysicalMemory;
     }
 
-    public void setM(int m) {
-        M = m;
-    }
-
-    public int getR(){
-        return R;
-    }
-
-    public void setR(int r) {
-        R = r;
-    }
-
-    public int getPhysicalPageID() {
-        return physicalPageID;
-    }
-
-    public void setPhysicalPageID(int physicalPageID) {
-        this.physicalPageID = physicalPageID;
-    }
-
-    public boolean isInPhysicalMemory() {
-        return isInPhysicalMemory;
-    }
-
-    public void setInPhysicalMemory(boolean inPhysicalMemory) {
-        isInPhysicalMemory = inPhysicalMemory;
-    }
-
-    @Override
-    public int compareTo(Page p) {
-        if(R*2+M >p.getR()*2+p.getM()){
-            return 1;
-        }
-        else if (R*2+M < p.getR()*2+p.getM()){
-            return -1;
-        }
-        return 0;
+    public int getPageID() {
+        return this.PageID;
     }
 
     public int getProcessID() {
-        return processID;
+        return this.ProcessID;
     }
 }

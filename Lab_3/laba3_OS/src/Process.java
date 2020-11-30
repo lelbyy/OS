@@ -1,24 +1,33 @@
 import java.util.ArrayList;
 
 public class Process {
-    private final ArrayList<Page> virtualMemory;
-    private final int ID;
+    private int ProcessID;
+    private PageTable pageTable;
 
-    Process(int ID) {
-        this.ID = ID;
-        virtualMemory = new ArrayList<>();
-        int pagesCount = Main.getRandomNumber(2, 5);
-        for (int i = 1; i <= pagesCount; i++) {
-            virtualMemory.add(new Page(i, ID));
-        }
-        System.out.println("Process " + ID + " contains " + pagesCount + " pages");
-    }
-
-    public ArrayList<Page> getVirtualMemory() {
-        return virtualMemory;
+    public Process(int ProcessID) {
+        this.ProcessID = ProcessID;
+        System.out.println("New process : " + this.ProcessID + ";");
+        pageTable = new PageTable();
+        pageTable.setProcessID(ProcessID);
     }
 
     public int getID() {
-        return ID;
+        return ProcessID;
+    }
+
+    public Page getNextPage() {
+        return this.pageTable.getPage();
+    }
+
+    public Page getPage(int ind) {
+        return pageTable.getPage(ind);
+    }
+
+    public void addPage(Page page) {
+        pageTable.addPage(page);
+    }
+
+    public int getSize() {
+        return pageTable.getSize();
     }
 }
