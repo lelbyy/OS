@@ -28,6 +28,7 @@ public class Core {
              stack.push(mm.pop());
         }
         if (size == 0) {
+
             System.out.println("Стэк пуст");
             return;
         }
