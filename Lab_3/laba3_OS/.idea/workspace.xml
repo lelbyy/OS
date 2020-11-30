@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf0f34b3-22e0-454c-a849-023c71152e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemoryDistributor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoryDistributor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PageTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PageTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/META-INF/laba3_OS.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/MemoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/Page.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/PageTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/PageTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/Process.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/Process.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,33 +62,45 @@
       <option name="presentableId" value="Default" />
       <updated>1606728662427</updated>
     </task>
+    <task id="LOCAL-00001" summary="fixed">
+      <created>1606736804954</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606736804954</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="714" y="81" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606732051190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="81" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606732051190" />
-    <state x="577" y="114" key="CommitChangelistDialog2" timestamp="1606736755187">
+    <state x="577" y="114" key="CommitChangelistDialog2" timestamp="1606736804204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606736755187" />
-    <state width="1877" height="309" key="GridCell.Tab.0.bottom" timestamp="1606736758701">
+    <state x="577" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606736804204" />
+    <state width="1877" height="309" key="GridCell.Tab.0.bottom" timestamp="1606736861431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606736758701" />
-    <state width="1877" height="309" key="GridCell.Tab.0.center" timestamp="1606736758701">
+    <state width="1877" height="309" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
+    <state width="1877" height="309" key="GridCell.Tab.0.center" timestamp="1606736861431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606736758701" />
-    <state width="1877" height="309" key="GridCell.Tab.0.left" timestamp="1606736758701">
+    <state width="1877" height="309" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
+    <state width="1877" height="309" key="GridCell.Tab.0.left" timestamp="1606736861431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606736758701" />
-    <state width="1877" height="309" key="GridCell.Tab.0.right" timestamp="1606736758701">
+    <state width="1877" height="309" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
+    <state width="1877" height="309" key="GridCell.Tab.0.right" timestamp="1606736861431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606736758701" />
+    <state width="1877" height="309" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
     <state x="1110" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606734044935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
