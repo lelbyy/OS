@@ -12,9 +12,10 @@ public class Main{
     private JFrame frame ;
     private JTextField textFieldName;
     private JTextField textField_1;
+    Disk disk= new Disk();
 
     private JList list;
-    Journal jfs = new Journal();
+    FileSystem jfs = new FileSystem();
     DefaultListModel dlm = new DefaultListModel();
 
     public static void main(String[] args) {
@@ -281,11 +282,11 @@ public class Main{
                     selectVector = selected.getSegmentsVector();
                     if (currentSelectVector != null) {
                         for (int i = 0; i < currentSelectVector.size(); i++) {
-                            Disk.memoryDisk[currentSelectVector.get(i)].setSelect(false);
+                            disk.getSegment(currentSelectVector.get(i)).setSelect(false);
                         }
                     }
                     for (int i = 0; i < selectVector.size(); i++) {
-                        Disk.memoryDisk[selectVector.get(i)].setSelect(true);
+                        disk.getSegment(selectVector.get(i)).setSelect(true);
                     }
                     currentSelectVector = selectVector;
                     frame.repaint();
@@ -298,11 +299,11 @@ public class Main{
                     selectVector = selected.getSegmentsVector();
                     if (currentSelectVector != null) {
                         for (int i = 0; i < currentSelectVector.size(); i++) {
-                            Disk.memoryDisk[currentSelectVector.get(i)].setSelect(false);
+                            disk.getSegment(currentSelectVector.get(i)).setSelect(false);
                         }
                     }
                     for (int i = 0; i < selectVector.size(); i++) {
-                        Disk.memoryDisk[selectVector.get(i)].setSelect(true);
+                        disk.getSegment(selectVector.get(i)).setSelect(true);
                     }
                     currentSelectVector = selectVector;
 

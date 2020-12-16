@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bf0f34b3-22e0-454c-a849-023c71152e81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/META-INF/laba3_OS.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/MemoryManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/Page.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/PageTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/PageTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/laba3_OS/Process.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/laba3_OS/Process.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab_4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab_4/out/production/Lab_4/META-INF/Lab_4.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Tekhnologii_programmirovania_JAVA/Технологии программирования JAVA/BomberPlaneForm3" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -85,25 +81,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="577" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606736804204" />
-    <state width="1877" height="309" key="GridCell.Tab.0.bottom" timestamp="1606736861431">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607964769403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
-    <state width="1877" height="309" key="GridCell.Tab.0.center" timestamp="1606736861431">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607964769403" />
+    <state width="1877" height="309" key="GridCell.Tab.0.bottom" timestamp="1607944336830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
-    <state width="1877" height="309" key="GridCell.Tab.0.left" timestamp="1606736861431">
+    <state width="1877" height="309" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607944336830" />
+    <state width="1877" height="309" key="GridCell.Tab.0.center" timestamp="1607944336829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
-    <state width="1877" height="309" key="GridCell.Tab.0.right" timestamp="1606736861431">
+    <state width="1877" height="309" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607944336829" />
+    <state width="1877" height="309" key="GridCell.Tab.0.left" timestamp="1607944336829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="309" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606736861431" />
-    <state x="1110" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606734044935">
+    <state width="1877" height="309" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607944336829" />
+    <state width="1877" height="309" key="GridCell.Tab.0.right" timestamp="1607944336830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1110" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606734044935" />
+    <state width="1877" height="309" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607944336830" />
+    <state x="1110" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1607964725342">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1110" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607964725342" />
   </component>
 </project>

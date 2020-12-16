@@ -7,7 +7,7 @@ public class Files implements Serializable{
     private int countSegment = 0;
     private int firstSegmentIndexInDisk = -1;
     private Vector<Integer> segmentsVector = new Vector<>();
-
+    Disk disk;
     public void setSegmentsVector(Vector<Integer> segmentsVector) {
         this.segmentsVector = segmentsVector;
     }
@@ -16,6 +16,9 @@ public class Files implements Serializable{
         segmentsVector.add(index);
     }
 
+    public Files(Disk disk){
+        this.disk = disk;
+    }
 
     public Files(String nameFile){
         this.nameFile = nameFile;
@@ -30,9 +33,9 @@ public class Files implements Serializable{
             return null;
         }
         FileSegment fs;
-        fs = Disk.memoryDisk[firstSegmentIndexInDisk];
+        fs = disk.getSegment(firstSegmentIndexInDisk);
         while(fs.getNextIndexMemory() != -1){
-            fs = Disk.memoryDisk[fs.getNextIndexMemory()];
+            fs = disk.getSegment(fs.getNextIndexMemory());
         }
         return fs;
     }
@@ -52,7 +55,7 @@ public class Files implements Serializable{
     public void createSegment(){
         FileSegment fs;
 
-        if(Disk.memoryDisk[Disk.memoryDisk.length -1] != null){
+        if(disk.getSegment(disk.getLength() -1) != null){
             return;
         }
         if(firstSegmentIndexInDisk == -1){
@@ -60,13 +63,13 @@ public class Files implements Serializable{
             segmentsVector.add(freeSegmentSearch());
             fs = new FileSegment(freeSegmentSearch(), countSegment);
             countSegment++;
-            Disk.memoryDisk[freeSegmentSearch()] = fs;
+            disk.setSegment(freeSegmentSearch(),fs);
             return;
         }
 
-        fs = Disk.memoryDisk[firstSegmentIndexInDisk];
+        fs = disk.getSegment(firstSegmentIndexInDisk);
         while(fs.getNextIndexMemory() != -1){
-            fs = Disk.memoryDisk[fs.getNextIndexMemory()];
+            fs = disk.getSegment(fs.getNextIndexMemory());
         }
 
         fs.setNextIndexMemory(freeSegmentSearch());
@@ -75,13 +78,13 @@ public class Files implements Serializable{
         fs = new FileSegment(freeSegmentSearch(), countSegment);
         countSegment++;
         segmentsVector.add(freeSegmentSearch());
-        Disk.memoryDisk[freeSegmentSearch()] = fs;
+        disk.setSegment(freeSegmentSearch(),fs);
 
     }
 
     private int freeSegmentSearch(){
-        for(int i = 0; i < Disk.memoryDisk.length; i++){
-            if(Disk.memoryDisk[i] == null){
+        for(int i = 0; i < disk.getLength(); i++){
+            if(disk.getSegment(i) == null){
                 return i;
             }
         }
@@ -93,17 +96,17 @@ public class Files implements Serializable{
             return;
         }
         FileSegment fs;
-        fs = Disk.memoryDisk[firstSegmentIndexInDisk];
+        fs = disk.getSegment(firstSegmentIndexInDisk);
         while(fs != null){
             int cash = fs.getIndexInMemory();
             System.out.println(cash);
             if(fs.getNextIndexMemory() == -1){
-                Disk.memoryDisk[cash] = null;
+                disk.setSegment(cash,null);
                 return;
             }
-            fs = Disk.memoryDisk[fs.getNextIndexMemory()];
+            fs = disk.getSegment(fs.getNextIndexMemory());
 
-            Disk.memoryDisk[cash] = null;
+            disk.setSegment(cash,null);
         }
     }
 
@@ -147,7 +150,7 @@ public class Files implements Serializable{
             }
 
             cloneFile.addInSegmentVector(freeSegmentSearch());
-            Disk.memoryDisk[freeSegmentSearch()] = cloneFileSegment;
+            disk.setSegment(freeSegmentSearch(),cloneFileSegment);
 
             if(i < countSegment-1){
                 cloneFileSegment.setNextIndexMemory(freeSegmentSearch());

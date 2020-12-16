@@ -1,11 +1,11 @@
 import java.util.List;
 import java.util.Vector;
 
-public class Journal {
+public class FileSystem {
     Catalogs rootCatalog = new Catalogs("root", null);
     Catalogs currentCatalog = rootCatalog;
     Object rememberObject;
-    public Journal(){
+    public FileSystem(){
 
     }
 
