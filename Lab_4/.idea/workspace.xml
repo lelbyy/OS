@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ed0f3c7-92fc-41b2-942a-a8e8b30d0fdb" name="Default Changelist" comment="fixed">
-      <change beforePath="$PROJECT_DIR$/../Lab_3/laba3_OS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/laba3_OS/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6ed0f3c7-92fc-41b2-942a-a8e8b30d0fdb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Disk.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Disk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Journal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Disk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Files.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Files.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Main$listSelectionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Main$listSelectionListener.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +58,14 @@
       <option name="presentableId" value="Default" />
       <updated>1607936658053</updated>
     </task>
+    <task id="LOCAL-00001" summary="fixed">
+      <created>1608153826569</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608153826570</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -79,30 +73,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="584" y="114" key="CommitChangelistDialog2" timestamp="1608153561482">
+    <state x="584" y="114" key="CommitChangelistDialog2" timestamp="1608153825414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="584" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1608153561482" />
+    <state x="584" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1608153825414" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607944309851">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607944309851" />
-    <state width="1877" height="145" key="GridCell.Tab.0.bottom" timestamp="1608153561579">
+    <state width="1877" height="145" key="GridCell.Tab.0.bottom" timestamp="1608154263860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="145" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608153561579" />
-    <state width="1877" height="145" key="GridCell.Tab.0.center" timestamp="1608153561579">
+    <state width="1877" height="145" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608154263860" />
+    <state width="1877" height="145" key="GridCell.Tab.0.center" timestamp="1608154263860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="145" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608153561579" />
-    <state width="1877" height="145" key="GridCell.Tab.0.left" timestamp="1608153561578">
+    <state width="1877" height="145" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608154263860" />
+    <state width="1877" height="145" key="GridCell.Tab.0.left" timestamp="1608154263860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="145" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608153561578" />
-    <state width="1877" height="145" key="GridCell.Tab.0.right" timestamp="1608153561579">
+    <state width="1877" height="145" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608154263860" />
+    <state width="1877" height="145" key="GridCell.Tab.0.right" timestamp="1608154263860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="145" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608153561579" />
+    <state width="1877" height="145" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608154263860" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1608148901571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
