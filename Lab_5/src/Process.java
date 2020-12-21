@@ -1,12 +1,11 @@
 public class Process {
-
     private int ID;
     private boolean workWithDevices;
     private int timeBeforeWorkWithDevices;
     private int timeWorkWithDevices;
     private int timeAfterWorkWithDevices;
-    int workTime = 0;
     private int timeSegment = 1000;
+    int workTime = 0;
 
     Process(int ID, boolean workWithDevices, int timeBeforeWorkWithDevices, int timeWorkWithDevices, int timeAfterWorkWithDevices) {
         this.ID = ID;
@@ -66,7 +65,7 @@ public class Process {
             }
         }
         if (workWithDevices && timeWorkWithDevices != 0) {
-            return "Процесс " + ID + " приостановлен после " + workTime + " единиц времени";
+            return "Процесс " + ID + " приостановлен после " + workTime + " единиц времени .";
         }
         if (timeAfterWorkWithDevices != 0) {
             if (timeAfterWorkWithDevices > timeSegment - workTime) {
@@ -96,7 +95,7 @@ public class Process {
         }
         if (workWithDevices && timeWorkWithDevices != 0) {
             timeWorkWithDevices = 0;
-            return "Процесс " + ID + " прерван после " + workTime + " единиц времени";
+            return "Процесс " + ID + " прерван после " + workTime + " единиц времени .";
         }
         if (timeAfterWorkWithDevices != 0) {
             if (timeAfterWorkWithDevices > workTimeBeforeBreak - workTime) {
@@ -111,7 +110,7 @@ public class Process {
         return "Процесс " + ID + " выполнен после " + workTime + " единиц времени";
     }
 
-    public String extensionPerformProcessWithBlock() {
+    public String proceedExecuteProcessWithBlock() {
         System.out.println("Процесс " + ID + " продолжает работу\n");
         if (timeAfterWorkWithDevices != 0) {
             if (timeAfterWorkWithDevices > timeSegment - workTime) {
@@ -136,9 +135,9 @@ public class Process {
 
     public String getWorkWithDevices() {
         if (workWithDevices) {
-            return "взаимодействует во время выполнения с устройством ввода/вывода";
+            return "взаимодействует с устройством ввода/вывода";
         }
-        return "не взаимодействует во время выполнения с устройством ввода/вывода";
+        return "не взаимодействует с устройством ввода/вывода";
     }
 
     public String getTimeWorkWithDevicesToPrint() {

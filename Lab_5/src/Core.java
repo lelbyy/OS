@@ -12,9 +12,9 @@ public class Core {
     public void createProcess() {
         for (int i = 1; i <= random.nextInt(10) + 1; i++) {
             boolean workWithDevices = random.nextBoolean();
-            int timeBeforeWorkWithDevices = random.nextInt(1001);
-            int timeWorkWithDevices = random.nextInt(401);
-            int timeAfterWorkWithDevices = random.nextInt(1001);
+            int timeBeforeWorkWithDevices = random.nextInt(1001) + 500;
+            int timeWorkWithDevices = random.nextInt(401) + 100;
+            int timeAfterWorkWithDevices = random.nextInt(1001) + 500;
             Process processToQueueWithBlock = new Process(i, workWithDevices, timeBeforeWorkWithDevices, timeWorkWithDevices, timeAfterWorkWithDevices);
             queueWithBlock.add(processToQueueWithBlock);
             Process processToQueueWithoutBlock = new Process(i, workWithDevices, timeBeforeWorkWithDevices, timeWorkWithDevices, timeAfterWorkWithDevices);
@@ -22,7 +22,7 @@ public class Core {
         }
     }
 
-    public void ShowAllProcesses() {
+    public void showProcesses() {
         List<Process> listForPrint = (List<Process>) queueWithBlock;
         System.out.println("Мы имеем" + listForPrint.size() + " процессов:");
         for (int i = 0; i < listForPrint.size(); i++) {
@@ -34,18 +34,18 @@ public class Core {
 
     public void withBlock() {
         int totalWorkTime = 0;
-        System.out.println("Начаало работаты с блокировками \n");
+        System.out.println("Начало работы с блокировками \n");
         Process process = queueWithBlock.poll();
         while (process != null) {
             String result = process.performProcessWithBlock();
             System.out.println(result + "\n");
-            if (result.contains("из-за")) {
+            if (result.contains(".")) {
                 totalWorkTime += process.getTimeWorkWithDevices();
                 Process newProcess = queueWithBlock.peek();
                 result = newProcess.performProcessWithBreaking(process.getTimeWorkWithDevices());
                 process.setTimeWorkWithDevices();
                 System.out.println(result + "\n");
-                result = process.extensionPerformProcessWithBlock();
+                result = process.proceedExecuteProcessWithBlock();
                 System.out.println(result + "\n");
             }
             if (result.contains("приостановлен")) {
@@ -59,7 +59,7 @@ public class Core {
 
     public void withoutBlock() {
         int totalWorkTime = 0;
-        System.out.println("Начало работы без блокировок \n");
+        System.out.println("Начинает работать планировщик без блокировок \n");
         Process process = queueWithoutBlock.poll();
         while (process != null) {
             String result = process.performProcessWithoutBlock();
@@ -70,6 +70,6 @@ public class Core {
             totalWorkTime += process.getWorkTime();
             process = queueWithoutBlock.poll();
         }
-        System.out.println("Общее время затраченное на выполнение процессов " + totalWorkTime + " единиц времени");
+        System.out.println("Общее время затраченное на выполнение процессов " + totalWorkTime + " единиц времени \n");
     }
 }
